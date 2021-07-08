@@ -1,0 +1,14 @@
+conda==4.10.1
+conda-build==3.21.4
+Cython==0.28.4
+future==0.18.2
+h5py==3.1.0
+kaggle==1.5.12
+matplotlib==3.3.4
+numpy==1.19.2
+opencv-python==4.4.0.46
+pandas==1.1.4
+Pillow==8.2.0
+scikit-image==0.15.0
+scikit-learn==0.24.1
+ipywidgets==7.6.3
