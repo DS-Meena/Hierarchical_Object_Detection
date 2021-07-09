@@ -34,6 +34,8 @@ we have only used Pascal VOC 2007 dataset during training and testing. But you c
 os.environ['KAGGLE_USERNAME']=kaggle_data["username"]
 os.environ['KAGGLE_KEY']=kaggle_data["key"]``
 
+``from kaggle import api``
+
 - Download Pascal Voc Datasets
 
 ``! kaggle datasets download -d zaraks/pascal-voc-2007``
@@ -69,10 +71,35 @@ Note - Some folder names are reduntant, but before moving folder make sure it co
 
 1. Create Custom_Data Folder Inside test Folder.
 2. Create 2 sub-folders inside Custom_Data folder, a)Images b) video
-3. Inside Video Folder, create another sub-folder frames.
+3. Inside Video Folder, create sub-folders frames and Annotations.
 4. You can download the images for the Test/Custom_Data/Images sub-folder
 from the repository.
 5. Similarly, you can download the video of walking person for the Test/Custom_Data/Video sub-folder from the repository.
+6. Then download the all annotations files(.xml) and frames images (.jpg) from the repository and store them in Test/Custom_Data/Video/Annotations and Test/Custom_Data/Video/frames folder respectively.
+
+Note - Since the person is not visible in all frames, so i have not used all frames images.
+
+## How to Run Code:-
+
+After setting, the environment and data folders.
+
+1. Train.ipynb
+
+Follow the given instructions in the train.ipynb notebook for model training and saving it, Also for downloading the PASCAL dataset. 
+
+2.Test.ipynb
+
+- Note-> this notebook is only for testing aeroplane detection model, so run the cells after training an aeroplane detection model and saving it.
+
+In this notebook you have to only follow the given instructions.
+
+3.test_custom_data.ipynb
+
+- Note -> in this you need to have both trained model, aeroplane detection and person detection model.
+
+In this notebook you have to only follow the given instructions.
+
+You can also do testing between the cells, but remember to run the cells in correct sequence as denoted by the Nos.
 
 
 Final File structure:
@@ -93,6 +120,7 @@ Final File structure:
             Custom_Data/
                 Images/
                 Video/
+                    Annotations/
                     frames/
         Train/
             VOC2012/
@@ -115,5 +143,13 @@ Final File structure:
                     Main/
                     Layout/
     Models/
-
-After This setup, you can try to run the Notebooks. and hopefully they should run without not too much library errors.
+        DQN_with_optimizer_25
+        DQN_with_optimizer_Person_25_10_ModMask
+    features.py
+    image_helper.py
+    metrics.py
+    parse_xml_annotations.py
+    reinforcement.py
+    test_custom_data.ipynb
+    test.ipynb
+    train.ipynb
