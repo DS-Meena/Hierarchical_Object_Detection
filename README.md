@@ -2,6 +2,15 @@
 
  This is a implementation of research paper [Hierachical Object detection using Deep RL]. We have done it in Pytorch.  
 
+Walking person detection in a video: -
+I have extracted each frame and applied the object detection model on each frame individually.
+
+ ![image](https://user-images.githubusercontent.com/47668949/152681419-f0649845-c6b2-4a88-be17-23dc512838d3.png)
+
+Aeroplace detection in Image: -
+![image](https://user-images.githubusercontent.com/47668949/152681466-3278a102-10f0-4580-8ae9-cef2da30837c.png)
+
+
 ## Setup Environment
 
 Python 3.8.5 is used.
