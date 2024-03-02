@@ -1,6 +1,28 @@
 # Hierarchical Object detection
 
- This is a implementation of research paper [Hierachical Object detection using Deep RL]. We have done it in Pytorch.  
+In this project, I trained an object detection model using deep reinforcement learning algorithm to detect a walking person in a video. I followed this research paper ![Hierachical Object detection using Deep RL](https://arxiv.org/pdf/2208.04511.pdf). This model can be used in Gait analysis.
+
+- Dataset 
+I used the pascal-voc-2007 dataset to train it. (that contains the annotations(coordinates) files and images).
+
+- Training
+I used the DQN algorithm with experience replay (stores state transitions) for training with epsilon greedy exploration. I used VGG16 CNN Architecture to get the features from the image. 
+
+- To Detect a walking person 
+I changed the ratio of contracting the bounding box so that it contracts on the person. and trained the model again with slight modifications like in the bonding box shape for a better fit. 
+
+- Reward
+I used the IOU (intersection over union) value for reward, 
++ve reward if increases
+-ve reward otherwise
+terminate if IOU > 0.5 (as defined by officials).
+
+- Predictions
+The model predicts an action associated with either the moving or termination of the current bounding box like moving it right, left, up, down or terminate.
+We change the bounding box according to the chosen action (5 movement actions). Get new annotations using offset.
+
+- Results
+Plotted the average precision score and precision-recall curve. and no steps were taken in each image histogram.
 
 Walking person detection in a video: -
 I have extracted each frame and applied the object detection model on each frame individually.
