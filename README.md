@@ -1,6 +1,6 @@
 # Hierarchical Object detection
 
-In this project, I trained an object detection model using deep reinforcement learning algorithm to detect a walking person in a video. I followed this research paper ![Hierachical Object detection using Deep RL](https://arxiv.org/pdf/2208.04511.pdf). This model can be used in Gait analysis.
+In this project, I trained an object detection model using a deep reinforcement learning algorithm and applied this model to detect a walking person in a video. I followed this research paper ![Hierachical Object detection using Deep RL](https://arxiv.org/pdf/2208.04511.pdf). This model can be used in Gait analysis.
 
 - Dataset 
 I used the pascal-voc-2007 dataset to train it. (that contains the annotations(coordinates) files and images).
